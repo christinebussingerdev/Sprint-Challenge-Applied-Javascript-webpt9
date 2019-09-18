@@ -30,13 +30,28 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+A: a tree representing all the elements on a page that we can use to manipulate said elements.
+
+
 2. What is an event?
+
+A: Events are interactions with the site, like pressing keys, clicking, dragging and dropping, etc that we use to make dynamic content that reacts to user input.
+
 
 3. What is an event listener?
 
+A: A method we can use to track the user input and to trigger events we predefine.
+
+
 4. Why would we convert a NodeList into an Array?
 
+A: Nodelists only have access to the forEach array method, so if we'd like to use other array methods, we'll need to convert it to an array first.
+
+
 5. What is a component?
+
+A: Components are like standalone modules that are reusable and help us to not have to repeat the same pieces of code
+
 
 ### Git Set up
 
