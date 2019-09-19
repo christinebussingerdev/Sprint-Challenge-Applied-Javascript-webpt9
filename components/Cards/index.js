@@ -21,33 +21,46 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(results => {
         
+        const entryPoint = document.querySelector('.cards-container')
+        const bootstrap = results.data.articles.bootstrap
+        const javascript = results.data.articles.javascript
+        const jquery = results.data.articles.jquery
+        const node = results.data.articles.node
+        const technology = results.data.articles.technology
+
         console.log(results)
 
-        const newCard = document.createElement('div')
-        const entryPoint = document.querySelector('.cards-container')
-        // const data = results.data.articles
+        function cardConstructor(article) {                
+                const newCard = document.createElement('div')
 
-        // console.log(data)
-
-        // results.data.articles.forEach(topic => {
-
-            
-        newCard.innerHTML = `
-            <div class="card">
-                <div class="headline"></div>
-                    <div class="author">
-                        <div class="img-container">
-                        <img src={url of authors image} />
+                newCard.innerHTML = `
+                    <div class="card">
+                        <div class="headline">${article.headline}</div>
+                            <div class="author">
+                                <div class="img-container">
+                                <img src=${article.authorPhoto} />
+                            </div>
+                            <span>By ${article.authorName}</span>
+                        </div>
                     </div>
-                    <span>By {authors name}</span>
-                </div>
-            </div>
-            `
-            entryPoint.appendChild(newCard)
-            
-        //     // 
-        // })
+                `
+                entryPoint.appendChild(newCard)
+        }
+        bootstrap.forEach(article => { 
+            cardConstructor(article);
+        })
+        javascript.forEach(article => { 
+            cardConstructor(article);
+        })
+        jquery.forEach(article => { 
+            cardConstructor(article);
+        })
+        node.forEach(article => { 
+            cardConstructor(article);
+        })
+        technology.forEach(article => { 
+            cardConstructor(article);
+        })
 
-        
-        
+            
     })
